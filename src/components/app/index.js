@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as pokemon from '../../actions/pokemon';
 
+import Sidebar from '../sidebar';
+
 class App extends Component {
   componentWillMount() {
     const fetchPokemon = bindActionCreators(pokemon.fetchAll, this.props.dispatch);
@@ -11,9 +13,11 @@ class App extends Component {
   }
 
   render() {
+    let {pokemon} = this.props;
     return (
       <div className="App">
-        <h1> Hi </h1>
+        <h1> Pokedex </h1>
+        <Sidebar pokemon={pokemon} />
       </div>
     );
   }
