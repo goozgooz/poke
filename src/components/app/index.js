@@ -9,6 +9,7 @@ class App extends Component {
     const fetchPokemon = bindActionCreators(pokemon.fetchAll, this.props.dispatch);
     fetchPokemon();
   }
+
   render() {
     return (
       <div className="App">

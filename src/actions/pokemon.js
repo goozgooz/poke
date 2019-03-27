@@ -1,21 +1,19 @@
 import superagent from 'superagent';
-import * as pokemon from '../actiontypes/pokemon';
+import * as Pokemon from '../actiontypes/pokemon';
+
 const API_URL = process.env.REACT_APP_POKE_API_URL;
-console.log(API_URL)
-export const fetchAll = () => (store) => {
-  return superagent.get(`${API_URL}pokemon/1`)
+
+export const fetchAll = () => (dispatch) => {
+  return superagent.get(`${API_URL}pokemon?limit=151`)
     .then(res => {
-      console.log(res.body);
+      return dispatch(fetch(res.body.results));
     })
     .catch(err => {
-      console.log('ERROR');
       console.log(err);
     })
 };
 
-const fetch = (pokemon) => {
-  return {
-    type: pokemon.FETCH_ALL,
-    paylod: pokemon,
-  }
-}
+const fetch = (pokemon) => ({
+  type: Pokemon.FETCH_ALL,
+  payload: pokemon,
+})
