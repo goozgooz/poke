@@ -8,7 +8,7 @@ const Sidebar = (props) => {
     <Pokemon 
       key={i}
       pokemon={pokemon}
-      setFocus={() => setFocus(pokemon)}
+      setFocus={() => setFocus(pokemon.name)}
     />
   );
   

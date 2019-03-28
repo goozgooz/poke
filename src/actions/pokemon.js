@@ -13,7 +13,17 @@ export const fetchAll = () => (dispatch) => {
     })
 };
 
-export const focusPokemon = (pokemon) => ({
+export const fetchPokemon = (name) => (dispatch) => {
+  return superagent.get(`${API_URL}pokemon/${name}`)
+    .then(res => {
+      return dispatch(setFocus(res.body));
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+const setFocus = (pokemon) => ({
   type: Pokemon.SET_FOCUS,
   payload: pokemon,
 })

@@ -8,13 +8,13 @@ import Sidebar from '../sidebar';
 
 class App extends Component {
   componentWillMount() {
-    const fetchPokemon = bindActionCreators(PokemonActions.fetchAll, this.props.dispatch);
-    fetchPokemon();
+    const fetchAll = bindActionCreators(PokemonActions.fetchAll, this.props.dispatch);
+    fetchAll();
   }
 
   render() {
     let {pokemon} = this.props;
-    const setFocus = bindActionCreators(PokemonActions.focusPokemon, this.props.dispatch);
+    const setFocus = bindActionCreators(PokemonActions.fetchPokemon, this.props.dispatch);
     
     return (
       <div className="App">
