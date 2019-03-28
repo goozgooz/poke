@@ -2,18 +2,27 @@ import './_app.scss';
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as pokemon from '../../actions/pokemon';
+import * as PokemonActions from '../../actions/pokemon';
+
+import Sidebar from '../sidebar';
 
 class App extends Component {
   componentWillMount() {
-    const fetchPokemon = bindActionCreators(pokemon.fetchAll, this.props.dispatch);
-    fetchPokemon();
+    const fetchAll = bindActionCreators(PokemonActions.fetchAll, this.props.dispatch);
+    fetchAll();
   }
 
   render() {
+    let {pokemon} = this.props;
+    const setFocus = bindActionCreators(PokemonActions.fetchPokemon, this.props.dispatch);
+    
     return (
       <div className="App">
-        <h1> Hi </h1>
+        <h1> Pokedex </h1>
+        <Sidebar 
+          pokemon={pokemon.list} 
+          setFocus={setFocus}
+        />
       </div>
     );
   }

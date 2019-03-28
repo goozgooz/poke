@@ -4,7 +4,7 @@ import * as Pokemon from '../actiontypes/pokemon';
 const API_URL = process.env.REACT_APP_POKE_API_URL;
 
 export const fetchAll = () => (dispatch) => {
-  return superagent.get(`${API_URL}pokemon?limit=151`)
+  return superagent.get(`${API_URL}pokemon/?limit=151`)
     .then(res => {
       return dispatch(fetch(res.body.results));
     })
@@ -12,6 +12,21 @@ export const fetchAll = () => (dispatch) => {
       console.log(err);
     })
 };
+
+export const fetchPokemon = (name) => (dispatch) => {
+  return superagent.get(`${API_URL}pokemon/${name}`)
+    .then(res => {
+      return dispatch(setFocus(res.body));
+    })
+    .catch(err => {
+      console.log(err);
+    })
+};
+
+const setFocus = (pokemon) => ({
+  type: Pokemon.SET_FOCUS,
+  payload: pokemon,
+})
 
 const fetch = (pokemon) => ({
   type: Pokemon.FETCH_ALL,

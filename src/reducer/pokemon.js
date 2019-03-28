@@ -1,12 +1,24 @@
 import * as pokemon from '../actiontypes/pokemon';
-const initialState = [];
+const initialState = {
+  activePokemon: null,
+  list: []
+};
 
 export default function PokemonReducer(state = initialState, action) {
   let {type, payload} = action;
   
   switch(type) {
     case pokemon.FETCH_ALL:
-        return [...state, ...payload];
+      let newList = {
+        list: [...state.list, ...payload]
+      };
+      return {...state, ...newList};
+      
+    case pokemon.SET_FOCUS:
+      return {
+        ...state, 
+        activePokemon: payload
+      };
     
     default: 
       return state;
