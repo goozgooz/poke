@@ -13,6 +13,11 @@ export const fetchAll = () => (dispatch) => {
     })
 };
 
+export const focusPokemon = (pokemon) => ({
+  type: Pokemon.SET_FOCUS,
+  payload: pokemon,
+})
+
 const fetch = (pokemon) => ({
   type: Pokemon.FETCH_ALL,
   payload: pokemon,

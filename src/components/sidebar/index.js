@@ -1,19 +1,21 @@
 import React from 'react';
+import Pokemon from './pokemon';
 
 const Sidebar = (props) => {
-  let {pokemon} = props;
-  // console.log(pokemon);
-  
+  let {pokemon, setFocus} = props;
+
   let list = pokemon.map((pokemon, i) => 
-    <h1 key={i}> 
-      {pokemon.name} 
-    </h1>
+    <Pokemon 
+      key={i}
+      pokemon={pokemon}
+      setFocus={() => setFocus(pokemon)}
+    />
   );
   
   return (
-    <div className='pokemon-list'>
+    <ul className='pokemon-list'>
       {list}
-    </div>
+    </ul>
   )
 }
 
