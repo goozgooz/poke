@@ -1,13 +1,14 @@
 import './_display.scss';
 import React from 'react';
 
+import Pokemon from './pokemon';
+
 const PokemonDisplay = (props) => {
   let {pokemon} = props;
-  
   return (
     <div className='pokemon-display'>
       {pokemon ? 
-        <h1> {pokemon.name} </h1>
+        <Pokemon data={pokemon} />
         :
         <h1> empty </h1>
       }

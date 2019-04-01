@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as PokemonActions from '../../actions/pokemon';
 
+import Header from '../header';
 import Sidebar from '../sidebar';
 import PokemonDisplay from '../display';
 
@@ -18,9 +19,9 @@ class App extends Component {
     const setFocus = bindActionCreators(PokemonActions.fetchPokemon, this.props.dispatch);
     
     return (
-      <div 
-      className="App">
-        <h1 className="header"> Pokedex </h1>
+      <div className="App">
+      
+        <Header />
         
         <div className='content'>
           <Sidebar 
