@@ -1,3 +1,4 @@
+import './_sidebar.scss';
 import React from 'react';
 import Pokemon from './pokemon';
 

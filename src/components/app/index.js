@@ -18,8 +18,9 @@ class App extends Component {
     const setFocus = bindActionCreators(PokemonActions.fetchPokemon, this.props.dispatch);
     
     return (
-      <div className="App">
-        <h1> Pokedex </h1>
+      <div 
+      className="App">
+        <h1 className="header"> Pokedex </h1>
         
         <div className='content'>
           <Sidebar 

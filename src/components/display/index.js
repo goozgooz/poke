@@ -1,3 +1,4 @@
+import './_display.scss';
 import React from 'react';
 
 const PokemonDisplay = (props) => {
