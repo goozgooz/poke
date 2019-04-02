@@ -19,9 +19,14 @@ export const fetchPokemon = (name) => (dispatch) => {
       return dispatch(setFocus(res.body));
     })
     .catch(err => {
-      console.log(err);
+      console.log('invalid pokemon name', err.message);
+      return dispatch(invalidPokemon());
     })
 };
+
+const invalidPokemon = () => ({
+  type: Pokemon.INVALID_NAME,
+})
 
 const setFocus = (pokemon) => ({
   type: Pokemon.SET_FOCUS,

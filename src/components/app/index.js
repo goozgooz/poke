@@ -21,7 +21,9 @@ class App extends Component {
     return (
       <div className="App">
       
-        <Header />
+        <Header 
+          findPokemon = {setFocus}
+        />
         
         <div className='content'>
           <Sidebar 

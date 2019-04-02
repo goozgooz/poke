@@ -5,7 +5,7 @@ const Pokemon = (props) => {
   
   return (
     <li onClick={setFocus}>
-      {pokemon.name}
+      {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
     </li>
   )
 }

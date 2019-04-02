@@ -1,9 +1,18 @@
 import './_header.scss';
 import React from 'react';
 
-const Header = () => {
+import SearchBar from '../search';
+
+const Header = (props) => {
+  let {findPokemon} = props;
+  
   return (
-    <h1 className="header"> Pokedex </h1>
+    <div className="header">
+      <h1> Pokedex </h1>
+      <SearchBar
+        findPokemon={findPokemon}
+      />
+    </div>
   )
 }
 

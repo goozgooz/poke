@@ -19,6 +19,12 @@ export default function PokemonReducer(state = initialState, action) {
         ...state, 
         activePokemon: payload
       };
+      
+    case pokemon.INVALID_NAME:
+      return {
+        ...state,
+        activePokemon: 'INVALID NAME'
+      }
     
     default: 
       return state;

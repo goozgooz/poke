@@ -1,5 +1,10 @@
 @import '../../styles/vars';
 
 .pokemon-list {
-    border: 1px solid gray;
+    border: 1px solid $color-gray;
+    background-color: $color-khaki;
+    height: 92vh;
+    overflow-y: scroll;
+    
+
 }
