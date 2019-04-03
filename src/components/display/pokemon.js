@@ -7,7 +7,7 @@ const Pokemon = (props) => {
   console.log(data);
   if (data.types) {
     types = data.types.map((t, i) => (
-      <h2 key={i}> {t.type.name} </h2>
+      <li key={i} className={t.type.name}> {t.type.name} </li>
     ));
   }
   
@@ -18,7 +18,9 @@ const Pokemon = (props) => {
         :
         <React.Fragment>
           <h1> {data.name[0].toUpperCase() + data.name.slice(1)} </h1>
-          {types}
+          <ul>
+            {types}
+          </ul>
           <img src={data.sprites.front_default} alt='front of pokemon'/>
           <img src={data.sprites.back_default} alt='back on pokemon'/>
         </React.Fragment>
