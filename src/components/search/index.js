@@ -1,3 +1,4 @@
+import './_search.scss';
 import React, {Component} from 'react';
 
 class SearchBar extends Component {
