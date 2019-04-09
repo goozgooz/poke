@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as PokemonActions from '../../actions/pokemon';
 
+import Header from '../header';
 import Sidebar from '../sidebar';
+import PokemonDisplay from '../display';
 
 class App extends Component {
   componentWillMount() {
@@ -18,11 +20,22 @@ class App extends Component {
     
     return (
       <div className="App">
-        <h1> Pokedex </h1>
-        <Sidebar 
-          pokemon={pokemon.list} 
-          setFocus={setFocus}
+      
+        <Header 
+          findPokemon = {setFocus}
         />
+        
+        <div className='content'>
+          <Sidebar 
+            pokemon={pokemon.list} 
+            setFocus={setFocus}
+          />
+          
+          <PokemonDisplay 
+            pokemon={pokemon.activePokemon} 
+          />
+      </div>
+        
       </div>
     );
   }

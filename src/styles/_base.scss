@@ -4,3 +4,10 @@ body {
   font-family: $font-main;
   background-color: $color-light;
 }
+
+h1 {
+  color: $color-green;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+@import '../../styles/vars';
+
+.header {
+  align-items: center;
+  background-color: $color-khaki;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: space-evenly;
+  padding: 5px 0;
+
+}
